@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name techTechApp
- * @description
- * # techTechApp
- *
- * Main module of the application.
- */
 angular
   .module('techTechApp', [
     'ngAnimate',
@@ -18,15 +10,14 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'MainController'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutController',
-        controllerAs: 'about'
+        controller: 'AboutController'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
+

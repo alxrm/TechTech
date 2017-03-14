@@ -3,5 +3,5 @@
 
 angular.module('techTechApp')
   .controller('AboutController', ['$scope', function ($scope) {
-    $scope.someData = '1488';
+    $scope.someData = '1234';
   }]);

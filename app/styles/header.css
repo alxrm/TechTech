@@ -1,0 +1,52 @@
+.header .navbar {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06),
+  0 4px 5px 0 rgba(0, 0, 0, 0.06),
+  0 1px 10px 0 rgba(0, 0, 0, 0.08);
+
+  background-color: #FFEB3B;
+}
+
+.header .title {
+  font-family: 'Anton', sans-serif;
+  font-weight: 900;
+  color: #424242 !important;
+  font-size: 42px;
+}
+
+.header .navbar,
+.header .navbar-collapse {
+  border: none;
+  border-radius: 0;
+}
+
+.header .navbar-toggle {
+  border: none;
+  background-color: transparent;
+}
+
+.header .navbar-toggle:focus,
+.header .navbar-toggle:hover {
+  background-color: #FFF176 !important;
+}
+
+.header .navbar-nav > .active > a,
+.header .navbar-nav > .active > a:hover,
+.header .navbar-nav > .active > a:focus {
+  background-color: #FFF176 !important;
+}
+
+.header .icon-bar {
+  color: #424242;
+}
+
+.header .navbar-nav li {
+  text-align: center;
+}
+
+.header .navbar-nav a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #424242;
+  font-weight: 600;
+  text-transform: uppercase;
+}

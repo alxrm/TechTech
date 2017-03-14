@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+  require('load-grunt-tasks')(grunt);
 
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
@@ -32,14 +33,10 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all'],
+        tasks: ['babel:server', 'newer:jshint:all', 'newer:jscs:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
-      },
-      jsTest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -57,6 +54,28 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      }
+    },
+
+    babel: {
+      options: {
+        sourceMap: true
+      },
+      server: {
+        files: [{
+          expand: true,
+          cwd: 'app',
+          src: ['**/*.js'],
+          dest: '.tmp'
+        }]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/concat',
+          src: ['scripts/scripts.js'],
+          dest: '.tmp/concat/'
+        }]
       }
     },
 
@@ -87,21 +106,6 @@ module.exports = function (grunt) {
           }
         }
       },
-      test: {
-        options: {
-          port: 9001,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect.static(appConfig.app)
-            ];
-          }
-        }
-      },
       dist: {
         options: {
           open: true,
@@ -121,12 +125,6 @@ module.exports = function (grunt) {
           'Gruntfile.js',
           '<%= yeoman.app %>/scripts/{,*/}*.js'
         ]
-      },
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
       }
     },
 
@@ -141,9 +139,6 @@ module.exports = function (grunt) {
           'Gruntfile.js',
           '<%= yeoman.app %>/scripts/{,*/}*.js'
         ]
-      },
-      test: {
-        src: ['test/spec/{,*/}*.js']
       }
     },
 
@@ -384,17 +379,13 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'babel:server',
       'wiredep',
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('build', [
@@ -405,6 +396,7 @@ module.exports = function (grunt) {
     'postcss',
     'ngtemplates',
     'concat',
+    'babel:dist',
     'ngAnnotate',
     'copy:dist',
     'cdnify',
