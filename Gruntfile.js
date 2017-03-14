@@ -33,7 +33,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['babel:server', 'newer:jshint:all', 'newer:jscs:all'],
+        tasks: ['babel:server'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -59,7 +59,8 @@ module.exports = function (grunt) {
 
     babel: {
       options: {
-        sourceMap: true
+        sourceMap: true,
+        presets: ['es2015']
       },
       server: {
         files: [{
@@ -352,22 +353,11 @@ module.exports = function (grunt) {
       server: [
         'copy:styles'
       ],
-      test: [
-        'copy:styles'
-      ],
       dist: [
         'copy:styles',
         'imagemin',
         'svgmin'
       ]
-    },
-
-    // Test settings
-    karma: {
-      unit: {
-        configFile: 'test/karma.conf.js',
-        singleRun: true
-      }
     }
   });
 
