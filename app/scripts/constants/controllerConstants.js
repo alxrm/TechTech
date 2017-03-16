@@ -1,6 +1,6 @@
 'use strict';
 
-const ControllerSettings = {
+const controllerRoutingSettings = {
   root: {
     route: '/',
     settings: {

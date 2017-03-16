@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('techTechApp')
-  .controller('AboutController', ['$scope', function ($scope) {
-    $scope.someData = '1234';
-  }]);
+class AboutController {
+  constructor($scope) {
+    this._scope = $scope;
+    this._scope.someData = 'about'
+  }
+}

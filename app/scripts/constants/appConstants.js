@@ -1,6 +1,6 @@
 'use strict';
 
-const AppSettings = {
+const appSettings = {
   name: 'techTechApp',
   plugins: [
     'ngAnimate',
