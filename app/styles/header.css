@@ -33,6 +33,7 @@
 .header .navbar-nav > .active > a:hover,
 .header .navbar-nav > .active > a:focus {
   background-color: #FFF176 !important;
+  color: #424242 !important;
 }
 
 .header .icon-bar {

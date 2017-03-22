@@ -3,6 +3,7 @@
 class RouteUtils {
   static setupRoutes($routeProvider, controllers) {
     const keys = Object.keys(controllers);
+    const root = controllers.root;
     let currentController = null;
 
     keys.forEach(key => {
@@ -12,7 +13,7 @@ class RouteUtils {
     });
 
     $routeProvider.otherwise({
-      redirectTo: controllers.root.route
+      redirectTo: root ? root.route : '/'
     });
   }
 }

@@ -36,9 +36,9 @@
 
         <div class="collapse navbar-collapse" id="toolbar">
           <ul class="nav navbar-nav navbar-right" ng-controller="RouterController">
-            <li ng-class="{ active: isActive('/')}"><a href="#!/">Home</a></li>
+            <li ng-class="{ active: isActive('/')}"><a href="#!/">Articles</a></li>
+            <li ng-class="{ active: isActive('/books')}"><a href="#!/books">Books</a></li>
             <li ng-class="{ active: isActive('/about')}"><a href="#!/about">About</a></li>
-            <li ng-class="{ active: isActive('/contact')}"><a href="#!/contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -62,11 +62,14 @@
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/utils/routeUtils.js"></script>
+  <script src="scripts/utils/moduleUtils.js"></script>
+  <script src="scripts/utils/moduleBuilder.js"></script>
+  <script src="scripts/controllers/routing.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/articles.js"></script>
+  <script src="scripts/controllers/books.js"></script>
   <script src="scripts/constants/appConstants.js"></script>
   <script src="scripts/constants/controllerConstants.js"></script>
-  <script src="scripts/controllers/routing.js"></script>
-  <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/about.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild -->
 </body>

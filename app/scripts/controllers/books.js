@@ -1,8 +1,8 @@
 'use strict';
 
-class MainController {
+class BooksController {
   constructor($scope) {
     this._scope = $scope;
-    this._scope.someData = 'main'
+    this._scope.someData = 'books'
   }
 }
