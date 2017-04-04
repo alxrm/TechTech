@@ -6,6 +6,15 @@
   transition: box-shadow .2s ease-in-out;
 }
 
+.articles-item a,
+.articles-item a:hover,
+.articles-item a:focus,
+.articles-item a:active {
+  text-transform: none;
+  color: inherit;
+  text-decoration: none;
+}
+
 .articles-item:hover,
 .articles-item:focus {
   cursor: pointer;

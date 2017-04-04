@@ -28,5 +28,11 @@ const routingSettings = {
       controller: controllerSettings.about.name,
       templateUrl: 'views/about.html'
     }
+  },
+  article: {
+    route: '/article/:id',
+    settings: {
+      templateUrl: attr => 'views/article' + attr.id + '.html'
+    }
   }
 };
