@@ -13,6 +13,7 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/item.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
   <!-- endbuild -->
 
@@ -23,7 +24,7 @@
 
   <!-- Add your site or application content here -->
   <div class="header">
-    <div class="navbar navbar-default" role="navigation">
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#toolbar">
@@ -36,16 +37,16 @@
 
         <div class="collapse navbar-collapse" id="toolbar">
           <ul class="nav navbar-nav navbar-right" ng-controller="RouterController">
-            <li ng-class="{ active: isActive('/')}"><a href="#!/">Articles</a></li>
-            <li ng-class="{ active: isActive('/books')}"><a href="#!/books">Books</a></li>
-            <li ng-class="{ active: isActive('/about')}"><a href="#!/about">About</a></li>
+            <li ng-class="{ active: isActive('/')}"><a href="#!/">Статьи</a></li>
+            <li ng-class="{ active: isActive('/books')}"><a href="#!/books">Книги</a></li>
+            <li ng-class="{ active: isActive('/about')}"><a href="#!/about">О сайте</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container container-below">
     <div ng-view=""></div>
   </div>
 

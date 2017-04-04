@@ -16,3 +16,7 @@ body {
     margin-bottom: 20px;
   }
 }
+
+.container-below {
+  padding-top: 45px;
+}

@@ -1,0 +1,63 @@
+.articles-item {
+  font-family: 'Roboto', sans-serif;
+  margin: 16px 0;
+  border-radius: 2px !important;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, .1), 0 0 0 1px rgba(0, 0, 0, .02);
+  transition: box-shadow .2s ease-in-out;
+}
+
+.articles-item:hover,
+.articles-item:focus {
+  cursor: pointer;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .02);
+}
+
+.articles-item-description {
+  padding: 32px;
+}
+
+.articles-item-title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -0.4px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.item-secondary {
+  color: rgba(0, 0, 0, 0.44);
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: -0.4px;
+}
+
+.articles-item-thumbnail {
+  text-overflow: ellipsis;
+  line-height: 1.4 !important;
+  max-height: 4.2em !important;
+  margin-top: 16px;
+}
+
+.articles-item-description .line-clamp {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  padding-bottom: 2px !important;
+}
+
+.articles-item-duration {
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.articles-item-duration .glyphicon {
+  font-size: 12px;
+  padding: 0 2px;
+}
+
+.articles-item-cover {
+  background-color: #dddddd;
+  height: 150px;
+}
