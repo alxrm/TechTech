@@ -1,3 +1,18 @@
 <div class="row">
-  {{someData}}
+  <div class="articles-list">
+    <div class="articles-item" ng-repeat="article in articles">
+      <div class="articles-item-cover">
+        <img src="../images/yeoman.png">
+      </div>
+      <div class="articles-item-title">
+        {{article.title}}
+      </div>
+      <div class="articles-item-thumbnail">
+        {{article.thumbnail}}
+      </div>
+      <div class="articles-item-duration">
+        <i class="glyphicon glyphicon-time"></i> {{article.duration}}
+      </div>
+    </div>
+  </div>
 </div>
