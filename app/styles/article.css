@@ -43,3 +43,8 @@
 .article .panel-body {
   font-style: italic;
 }
+
+.article td, .article th {
+  text-align: center;
+  vertical-align: middle !important;
+}
