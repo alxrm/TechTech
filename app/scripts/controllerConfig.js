@@ -1,10 +1,22 @@
 'use strict';
 
 const controllerSettings = {
-  root: ArticlesController,
-  books: BooksController,
-  about: AboutController,
-  router: RouterController
+  root: {
+    name: 'ArticlesController',
+    settings: ['$scope', ArticlesController]
+  },
+  books: {
+    name: 'BooksController',
+    settings: ['$scope', BooksController]
+  },
+  about: {
+    name: 'AboutController',
+    settings: ['$scope', AboutController]
+  },
+  router: {
+    name: 'RouterController',
+    settings: ['$scope', '$location', RouterController]
+  }
 };
 
 const routingSettings = {

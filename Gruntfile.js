@@ -396,10 +396,4 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
-
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'newer:jscs',
-    'build'
-  ]);
 };

@@ -12,7 +12,7 @@ class ModuleUtils {
     keys.forEach(controllerKey => {
       currentController = controllersList[controllerKey];
 
-      module.controller(currentController.name, currentController);
+      module.controller(currentController.name, currentController.settings);
     })
   }
 }
