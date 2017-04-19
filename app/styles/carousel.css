@@ -1,3 +1,9 @@
+@media screen and (max-width: 920px) {
+  #books-carousel {
+    margin-top: -430px;
+  }
+}
+
 .books-item {
   background-color: #333333;
   height: 400px;
@@ -34,10 +40,4 @@
 
 .books-item .button {
   padding-top: 16px;
-}
-
-@media screen and (max-width: 920px){
-  #books-carousel {
-    margin-top: -430px;
-  }
 }

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width">
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -53,8 +53,11 @@
        ng-hide="isActive('/article/\\d+')" data-ride="carousel" ng-controller="SliderController">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#books-carousel" data-slide-to="{{$index}}" ng-repeat="slide in booksSlides"
-          ng-class="{active: slide.active}"></li>
+      <li data-target="#books-carousel" data-slide-to="0"></li>
+      <li data-target="#books-carousel" data-slide-to="1"></li>
+      <li data-target="#books-carousel" data-slide-to="2" class="active"></li>
+      <li data-target="#books-carousel" data-slide-to="3"></li>
+      <li data-target="#books-carousel" data-slide-to="4"></li>
     </ol>
 
     <!-- Wrapper for slides -->
