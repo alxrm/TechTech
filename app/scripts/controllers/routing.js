@@ -10,6 +10,6 @@ class RouterController {
   }
 
   isActive(curLocation) {
-    return this._location.path() === curLocation
+    return this._location.path().search(curLocation) !== -1
   }
 }

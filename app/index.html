@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width">
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -15,13 +15,15 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/item.css">
   <link rel="stylesheet" href="styles/article.css">
+  <link rel="stylesheet" href="styles/carousel.css">
+  <link rel="stylesheet" href="styles/transitions.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
   <!-- endbuild -->
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
 </head>
-<body ng-app="techTechApp">
+<body ng-app="techTechApp" ng-controller="RouterController">
 
   <!-- Add your site or application content here -->
   <div class="header">
@@ -37,8 +39,8 @@
         </div>
 
         <div class="collapse navbar-collapse" id="toolbar">
-          <ul class="nav navbar-nav navbar-right" ng-controller="RouterController">
-            <li ng-class="{ active: isActive('/')}"><a href="#!/">Статьи</a></li>
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{ active: isActive('/$')}"><a href="#!/">Статьи</a></li>
             <li ng-class="{ active: isActive('/books')}"><a href="#!/books">Материалы</a></li>
             <li ng-class="{ active: isActive('/about')}"><a href="#!/about">О приложении</a></li>
           </ul>
@@ -46,9 +48,137 @@
       </div>
     </div>
   </div>
+  <!--data-ride="carousel"-->
+  <div id="books-carousel" class="carousel slide animate-show-hide"
+       ng-hide="isActive('/article/\\d+')" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#books-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#books-carousel" data-slide-to="1"></li>
+      <li data-target="#books-carousel" data-slide-to="2"></li>
+      <li data-target="#books-carousel" data-slide-to="3"></li>
+      <li data-target="#books-carousel" data-slide-to="4"></li>
+    </ol>
 
-  <div class="container container-below">
-    <div ng-view=""></div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="books-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="center-block" src="images/book-1.jpg">
+              </div>
+              <div class="col-md-6">
+                <div class="books-info">
+                  <div class="title">Управление проектами по созданию ПО</div>
+                  <div class="subtitle">Автор: Уокер Ройс</div>
+                  <div class="button">
+                    <a href="https://vk.cc/6xeOGR" class="btn btn-primary">Купить книгу</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="books-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="center-block" src="images/book-2.jpg">
+              </div>
+              <div class="col-md-6">
+                <div class="books-info">
+                  <div class="title">Практика программирования</div>
+                  <div class="subtitle">Автор: Брайан Керниган</div>
+                  <div class="button">
+                    <a href="https://vk.cc/6xeOxF" class="btn btn-primary">Купить книгу</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="books-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="center-block" src="images/book-3.jpg">
+              </div>
+              <div class="col-md-6">
+                <div class="books-info">
+                  <div class="title">Быстрая разработка</div>
+                  <div class="subtitle">Автор: Стив Макконнелл</div>
+                  <div class="button">
+                    <a href="https://vk.cc/6xeOQ9" class="btn btn-primary">Купить книгу</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="books-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="center-block" src="images/book-4.jpg">
+              </div>
+              <div class="col-md-6">
+                <div class="books-info">
+                  <div class="title">Мастерство программирования</div>
+                  <div class="subtitle">Автор: Пит Макбрин</div>
+                  <div class="button">
+                    <a href="https://vk.cc/6xeOWS" class="btn btn-primary">Купить книгу</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="books-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="center-block" src="images/book-5.jpg">
+              </div>
+              <div class="col-md-6">
+                <div class="books-info">
+                  <div class="title">Унифицированный процесс разработки</div>
+                  <div class="subtitle">Автор: Ивар Якобсон</div>
+                  <div class="button">
+                    <a href="https://vk.cc/6xeP1I" class="btn btn-primary">Купить книгу</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" data-target="#books-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" data-target="#books-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="wrapper">
+    <div ng-view autoscroll class="wrapper-content"></div>
   </div>
 
   <!-- build:js(.) scripts/vendor.js -->
@@ -72,6 +202,7 @@
   <script src="scripts/controllers/articles.js"></script>
   <script src="scripts/controllers/books.js"></script>
   <script src="scripts/controllers/routing.js"></script>
+  <script src="scripts/controllers/slider.js"></script>
   <script src="scripts/controllerConfig.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild -->
