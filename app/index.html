@@ -50,115 +50,28 @@
   </div>
   <!--data-ride="carousel"-->
   <div id="books-carousel" class="carousel slide animate-show-hide"
-       ng-hide="isActive('/article/\\d+')" data-ride="carousel">
+       ng-hide="isActive('/article/\\d+')" data-ride="carousel" ng-controller="SliderController">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#books-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#books-carousel" data-slide-to="1"></li>
-      <li data-target="#books-carousel" data-slide-to="2"></li>
-      <li data-target="#books-carousel" data-slide-to="3"></li>
-      <li data-target="#books-carousel" data-slide-to="4"></li>
+      <li data-target="#books-carousel" data-slide-to="{{$index}}" ng-repeat="slide in booksSlides"
+          ng-class="{active: slide.active}"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active">
+      <div ng-repeat="slide in booksSlides" class="item" ng-class="{active: slide.active}">
         <div class="books-item">
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <img class="center-block" src="images/book-1.jpg">
+                <img class="center-block" ng-src="{{slide.image}}">
               </div>
               <div class="col-md-6">
                 <div class="books-info">
-                  <div class="title">Управление проектами по созданию ПО</div>
-                  <div class="subtitle">Автор: Уокер Ройс</div>
+                  <div class="title">{{slide.name}}</div>
+                  <div class="subtitle">Автор: {{slide.author}}</div>
                   <div class="button">
-                    <a href="https://vk.cc/6xeOGR" class="btn btn-primary">Купить книгу</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="books-item">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="center-block" src="images/book-2.jpg">
-              </div>
-              <div class="col-md-6">
-                <div class="books-info">
-                  <div class="title">Практика программирования</div>
-                  <div class="subtitle">Автор: Брайан Керниган</div>
-                  <div class="button">
-                    <a href="https://vk.cc/6xeOxF" class="btn btn-primary">Купить книгу</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="books-item">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="center-block" src="images/book-3.jpg">
-              </div>
-              <div class="col-md-6">
-                <div class="books-info">
-                  <div class="title">Быстрая разработка</div>
-                  <div class="subtitle">Автор: Стив Макконнелл</div>
-                  <div class="button">
-                    <a href="https://vk.cc/6xeOQ9" class="btn btn-primary">Купить книгу</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="books-item">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="center-block" src="images/book-4.jpg">
-              </div>
-              <div class="col-md-6">
-                <div class="books-info">
-                  <div class="title">Мастерство программирования</div>
-                  <div class="subtitle">Автор: Пит Макбрин</div>
-                  <div class="button">
-                    <a href="https://vk.cc/6xeOWS" class="btn btn-primary">Купить книгу</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="books-item">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="center-block" src="images/book-5.jpg">
-              </div>
-              <div class="col-md-6">
-                <div class="books-info">
-                  <div class="title">Унифицированный процесс разработки</div>
-                  <div class="subtitle">Автор: Ивар Якобсон</div>
-                  <div class="button">
-                    <a href="https://vk.cc/6xeP1I" class="btn btn-primary">Купить книгу</a>
+                    <a ng-href="{{slide.link}}" class="btn btn-primary">Купить книгу</a>
                   </div>
                 </div>
               </div>
@@ -193,6 +106,7 @@
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/constants/booksConstants.js"></script>
   <script src="scripts/constants/articlesConstants.js"></script>
   <script src="scripts/constants/appConstants.js"></script>
   <script src="scripts/utils/routeUtils.js"></script>

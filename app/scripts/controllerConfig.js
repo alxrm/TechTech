@@ -16,6 +16,10 @@ const controllerSettings = {
   router: {
     name: 'RouterController',
     settings: ['$scope', '$location', RouterController]
+  },
+  slider: {
+    name: 'SliderController',
+    settings: ['$scope', SliderController]
   }
 };
 
