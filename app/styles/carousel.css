@@ -8,6 +8,7 @@
   background-color: #333333;
   height: 400px;
   margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .books-item .container {
@@ -19,25 +20,31 @@
   padding: 20px 0;
 }
 
-.books-info {
+.books-item .col-md-6 {
   height: 400px;
-  padding: 80px 0;
+  position: relative;
+}
+
+.books-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .books-item .title {
   color: white;
   font-size: 36px;
   font-weight: 600;
-  padding-top: 16px;
+  margin: 20px 0 10px;
   line-height: 1.2;
 }
 
 .books-item .subtitle {
   color: white;
   font-size: 14px;
-  padding-top: 16px;
+  margin-bottom: 10px;
 }
 
 .books-item .button {
-  padding-top: 16px;
+  margin-bottom: 10px;
 }

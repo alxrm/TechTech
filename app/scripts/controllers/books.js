@@ -3,6 +3,6 @@
 class BooksController {
   constructor($scope) {
     this._scope = $scope;
-    this._scope.someData = 'books';
+    this._scope.books = books;
   }
 }

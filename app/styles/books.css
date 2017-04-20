@@ -1,0 +1,13 @@
+.books-catalog {
+  font-family: 'Roboto', sans-serif;
+}
+
+.books-catalog img {
+  height: 200px !important;
+}
+
+.books-catalog .thumbnail {
+  height: 360px;
+}
+
+
