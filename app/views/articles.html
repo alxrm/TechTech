@@ -3,7 +3,7 @@
     <div class="articles-item" ng-repeat="article in articles">
       <a ng-href="#!/{{article.path}}">
         <div class="articles-item-cover">
-          <!--<img src="../images/yeoman.png">-->
+          <img class="img-responsive" ng-src="{{article.cover}}">
         </div>
         <div class="articles-item-description">
           <div class="articles-item-title">
