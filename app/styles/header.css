@@ -7,11 +7,19 @@
 }
 
 .header .title {
-  font-family: 'Anton', sans-serif;
-  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
   color: #424242 !important;
-  font-size: 42px;
+  font-size: 26px;
+  letter-spacing: -.009em;
 }
+
+@media screen and (max-width: 768px) {
+  .header .title {
+    font-size: 14px;
+  }
+}
+
 
 .header .navbar,
 .header .navbar-collapse {

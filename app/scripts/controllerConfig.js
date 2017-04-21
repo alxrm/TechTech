@@ -9,10 +9,6 @@ const controllerSettings = {
     name: 'BooksController',
     settings: ['$scope', BooksController]
   },
-  about: {
-    name: 'AboutController',
-    settings: ['$scope', AboutController]
-  },
   router: {
     name: 'RouterController',
     settings: ['$scope', '$location', RouterController]
@@ -41,7 +37,6 @@ const routingSettings = {
   about: {
     route: '/about',
     settings: {
-      controller: controllerSettings.about.name,
       templateUrl: 'views/about.html'
     }
   },
